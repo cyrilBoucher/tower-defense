@@ -1,6 +1,6 @@
 package com.github.cyrilBoucher.td.GameObjects;
 
-import Interfaces.IClickable;
+import com.github.cyrilBoucher.td.Interfaces.IClickable;
 
 import com.github.cyrilBoucher.td.Utilities.WorldPoint;
 

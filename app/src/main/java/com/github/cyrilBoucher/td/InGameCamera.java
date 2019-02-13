@@ -1,6 +1,6 @@
 package com.github.cyrilBoucher.td;
 
-import Interfaces.IDragable;
+import com.github.cyrilBoucher.td.Interfaces.IDragable;
 
 public class InGameCamera extends GameCamera implements IDragable{
 	

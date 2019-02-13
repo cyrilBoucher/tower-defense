@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import Interfaces.IClickable;
+import com.github.cyrilBoucher.td.Interfaces.IClickable;
 import com.github.cyrilBoucher.td.Primitives.Sprite;
 import com.github.cyrilBoucher.td.Utilities.Conversion;
 import com.github.cyrilBoucher.td.Utilities.WorldPoint;

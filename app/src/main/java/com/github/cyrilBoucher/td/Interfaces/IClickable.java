@@ -1,4 +1,4 @@
-package Interfaces;
+package com.github.cyrilBoucher.td.Interfaces;
 
 public interface IClickable {
 

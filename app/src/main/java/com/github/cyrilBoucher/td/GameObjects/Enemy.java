@@ -1,6 +1,6 @@
 package com.github.cyrilBoucher.td.GameObjects;
 
-import Interfaces.IAnimatable;
+import com.github.cyrilBoucher.td.Interfaces.IAnimatable;
 import com.github.cyrilBoucher.td.Primitives.Sprite;
 import com.github.cyrilBoucher.td.Utilities.Conversion;
 import com.github.cyrilBoucher.td.Utilities.GridPoint;

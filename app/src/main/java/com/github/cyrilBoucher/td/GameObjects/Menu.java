@@ -2,7 +2,7 @@ package com.github.cyrilBoucher.td.GameObjects;
 
 import java.util.ArrayList;
 
-import Interfaces.IClickable;
+import com.github.cyrilBoucher.td.Interfaces.IClickable;
 import com.github.cyrilBoucher.td.Primitives.Sprite;
 
 public abstract class Menu implements IDrawable{

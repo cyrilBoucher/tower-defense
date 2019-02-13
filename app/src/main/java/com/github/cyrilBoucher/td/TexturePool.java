@@ -13,61 +13,60 @@ public class TexturePool
 {
 
 	private static HashMap<String, Integer> textures;
-	private static String[] texStrings = new String[]{
-		"main_menu",
-		"map1",
-		"defeat_menu",
-		"play_button",
-		"quit_button",
-		"projectile",
-		"tower",
-		"victory_menu",
-		"sell_button",
-		"upgrade_button",
-		"resources",
-		"ingame_menu_bar",
-		"warrior1_1",
-		"warrior1_2",
-		"warrior1_3",
-		"warrior1_4",
-		"warrior2_1",
-		"warrior2_2",
-		"warrior2_3",
-		"warrior2_4",
-		"text"
-	};
+	private static HashMap<String, Integer> resources = createResourcesMap();
 	
 	private static int[] texNames;
+
+	private static HashMap<String, Integer> createResourcesMap()
+	{
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("main_menu", R.drawable.main_menu);
+		map.put("map1", R.drawable.map1);
+		map.put("defeat_menu", R.drawable.defeat_menu);
+		map.put("play_button", R.drawable.play_button);
+		map.put("quit_button", R.drawable.quit_button);
+		map.put("projectile", R.drawable.projectile);
+		map.put("tower", R.drawable.tower);
+		map.put("victory_menu", R.drawable.victory_menu);
+		map.put("sell_button", R.drawable.sell_button);
+		map.put("upgrade_button", R.drawable.upgrade_button);
+		map.put("resources", R.drawable.resources);
+		map.put("ingame_menu_bar", R.drawable.ingame_menu_bar);
+		map.put("warrior1_1", R.drawable.warrior1_1);
+		map.put("warrior1_2", R.drawable.warrior1_2);
+		map.put("warrior1_3", R.drawable.warrior1_3);
+		map.put("warrior1_4", R.drawable.warrior1_4);
+		map.put("warrior2_1", R.drawable.warrior2_1);
+		map.put("warrior2_2", R.drawable.warrior2_2);
+		map.put("warrior2_3", R.drawable.warrior2_3);
+		map.put("warrior2_4", R.drawable.warrior2_4);
+
+		return map;
+	}
 	
 	public static boolean loadTextures(Context context)
 	{
 		textures = new HashMap<String, Integer>();
+
+		// generate one more texture name for text
+		texNames = new int[resources.size() + 1];
+		int texNamesIt = 0;
 		
-		texNames = new int[texStrings.length];
-		
-		GLES20.glGenTextures(texStrings.length, texNames, 0);
+		GLES20.glGenTextures(resources.size(), texNames, 0);
 	       
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
-        
-        for(int i = 0; i < texStrings.length; i++)
+
+        for(HashMap.Entry<String, Integer> entry : resources.entrySet())
         {
-        	// Retrieve our image from resources.
-        	if(texStrings[i] != "text")
-        	{
-	            int id = context.getResources().getIdentifier("drawable/" + texStrings[i], null, context.getPackageName());
-	            
-	        	Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), id, options);
-	
-	            if (bitmap == null) {
-	                Log.w("textureproblem", "Resource ID " + id + " could not be decoded.");
-	                return false;
-	            } 
-        	
+			Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), entry.getValue(), options);
+
+			if (bitmap == null) {
+				Log.w("textureproblem", "Resource " + entry.getKey() + "with ID " + entry.getValue() + " could not be decoded.");
+				return false;
+			}
             
-            
-            
-            GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texNames[i]);
+            GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texNames[texNamesIt]);
 
             GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_REPEAT);
             GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_REPEAT);
@@ -78,10 +77,12 @@ public class TexturePool
             GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
 
             bitmap.recycle();
-        	}
             
-            textures.put(texStrings[i], texNames[i]);
+            textures.put(entry.getKey(), texNames[texNamesIt++]);
         }
+
+        // finally add one last texture for the text to be rendered on
+		textures.put("text", texNames[texNamesIt]);
         
         return true;
 	}

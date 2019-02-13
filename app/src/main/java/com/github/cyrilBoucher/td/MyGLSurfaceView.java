@@ -143,6 +143,7 @@ public class MyGLSurfaceView extends GLSurfaceView {
 		    case MotionEvent.ACTION_POINTER_UP:
 		    	if(e.getPointerCount() < 2 && hasMoved == false)
 		    	{
+					performClick();
 		    		click(e.getX(pointerIndex), e.getY(pointerIndex));
 		    	}
 		    	else
@@ -178,16 +179,22 @@ public class MyGLSurfaceView extends GLSurfaceView {
     {    	
     	
     }
-    
-    public void click(float x, float y)
+
+	@Override
+	public boolean performClick()
     {
-    	float worldX = Conversion.screenToWorldX(x, mGame.getCamera());
-        float worldY = Conversion.screenToWorldY(y, mGame.getCamera());
-        
-    	TouchEvent evenement = new TouchEvent(worldX, worldY, TouchType.CLICK);
-    	
-    	mTouchEvtHdlr.push(evenement);
+		return super.performClick();
     }
+
+	public void click(float x, float y)
+	{
+		float worldX = Conversion.screenToWorldX(x, mGame.getCamera());
+		float worldY = Conversion.screenToWorldY(y, mGame.getCamera());
+
+		TouchEvent evenement = new TouchEvent(worldX, worldY, TouchType.CLICK);
+
+		mTouchEvtHdlr.push(evenement);
+	}
     
     public void zoom(float x1, float y1, float x2, float y2)
     {

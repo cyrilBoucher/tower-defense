@@ -35,11 +35,9 @@ public class TexturePool
 		map.put("warrior1_1", R.drawable.warrior1_1);
 		map.put("warrior1_2", R.drawable.warrior1_2);
 		map.put("warrior1_3", R.drawable.warrior1_3);
-		map.put("warrior1_4", R.drawable.warrior1_4);
 		map.put("warrior2_1", R.drawable.warrior2_1);
 		map.put("warrior2_2", R.drawable.warrior2_2);
 		map.put("warrior2_3", R.drawable.warrior2_3);
-		map.put("warrior2_4", R.drawable.warrior2_4);
 
 		return map;
 	}

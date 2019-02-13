@@ -1,4 +1,4 @@
-package TextToTexture;
+package com.github.cyrilBoucher.td.TextToTexture;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

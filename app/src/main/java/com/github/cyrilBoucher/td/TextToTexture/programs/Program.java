@@ -1,7 +1,7 @@
-package TextToTexture.programs;
+package com.github.cyrilBoucher.td.TextToTexture.programs;
 
-import TextToTexture.AttribVariable;
-import TextToTexture.Utilities;
+import com.github.cyrilBoucher.td.TextToTexture.AttribVariable;
+import com.github.cyrilBoucher.td.TextToTexture.Utilities;
 import android.opengl.GLES20;
 
 

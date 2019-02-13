@@ -1,6 +1,6 @@
-package TextToTexture;
+package com.github.cyrilBoucher.td.TextToTexture;
 
-import TextToTexture.programs.Program;
+import com.github.cyrilBoucher.td.TextToTexture.programs.Program;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
 

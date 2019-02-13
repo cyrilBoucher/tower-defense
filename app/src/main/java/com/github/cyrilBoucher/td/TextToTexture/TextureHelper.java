@@ -1,4 +1,4 @@
-package TextToTexture;
+package com.github.cyrilBoucher.td.TextToTexture;
 
 import android.content.Context;
 import android.graphics.Bitmap;

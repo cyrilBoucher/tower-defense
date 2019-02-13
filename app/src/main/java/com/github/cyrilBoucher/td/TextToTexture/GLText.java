@@ -7,13 +7,13 @@
 // origin, and the (x,y) positions are relative to that, as well as the
 // bottom-left of the string to render.
 
-package TextToTexture;
+package com.github.cyrilBoucher.td.TextToTexture;
 
-import TextToTexture.SpriteBatch;
-import TextToTexture.TextureHelper;
-import TextToTexture.TextureRegion;
-import TextToTexture.programs.BatchTextProgram;
-import TextToTexture.programs.Program;
+import com.github.cyrilBoucher.td.TextToTexture.SpriteBatch;
+import com.github.cyrilBoucher.td.TextToTexture.TextureHelper;
+import com.github.cyrilBoucher.td.TextToTexture.TextureRegion;
+import com.github.cyrilBoucher.td.TextToTexture.programs.BatchTextProgram;
+import com.github.cyrilBoucher.td.TextToTexture.programs.Program;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

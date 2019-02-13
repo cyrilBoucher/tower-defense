@@ -1,4 +1,4 @@
-package Text;
+package com.github.cyrilBoucher.td.Text;
 
 import com.github.cyrilBoucher.td.TexturePool;
 

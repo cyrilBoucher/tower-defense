@@ -2,7 +2,7 @@ package com.github.cyrilBoucher.td.GameObjects;
 
 import android.opengl.Matrix;
 import com.github.cyrilBoucher.td.Primitives.Sprite;
-import Text.Text;
+import com.github.cyrilBoucher.td.Text.Text;
 import com.github.cyrilBoucher.td.Utilities.WorldPoint;
 
 public class MenuBar extends GameObject implements IDrawable, IMovable{

@@ -27,7 +27,7 @@ import com.github.cyrilBoucher.td.GameObjects.VictoryMenu;
 import Interfaces.IClickable;
 import Interfaces.IDragable;
 import com.github.cyrilBoucher.td.Primitives.Grid;
-import TextToTexture.GLText;
+import com.github.cyrilBoucher.td.TextToTexture.GLText;
 import com.github.cyrilBoucher.td.Utilities.WorldPoint;
 import android.content.Context;
 import android.content.res.AssetManager;
